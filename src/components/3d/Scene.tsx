@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
 import { AnimatedBackground } from "./AnimatedBackground";
 import { LiquidGlass } from "./LiquidGlass";
 
@@ -13,9 +12,6 @@ export const Scene = () => {
       >
         <color attach="background" args={["#000000"]} />
         
-        {/* The environment provides reflections for the materials */}
-        <Environment preset="city" />
-
         <AnimatedBackground />
 
         {/* Global Liquid Glass Layer overlaying everything slightly to tie it together */}
