@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { Map, Calculator, MessageCircle, User } from "lucide-react";
 import { MapTab } from "@/components/tabs/MapTab";
 import { CalculatorTab } from "@/components/tabs/CalculatorTab";
@@ -21,7 +21,9 @@ const Index = () => {
 
   return (
     <>
-      <Scene />
+      <Suspense fallback={<div className="fixed inset-0 bg-black -z-10 pointer-events-none" />}>
+        <Scene />
+      </Suspense>
       <div className="flex flex-col min-h-screen max-w-md mx-auto relative bg-transparent pointer-events-none">
         {/* Content - re-enable pointer events for the interactive layer */}
         <main className="flex-1 overflow-y-auto pb-20 pointer-events-auto">
